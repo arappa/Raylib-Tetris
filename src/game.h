@@ -18,6 +18,8 @@ class Game{
         //Make private if only the game class will call it
         bool IsBlockOutside();
         void RotateBlock();
+        void LockBlock();
+        bool BlockFits();
         std::vector<Block> blocks;
         Block currentBlock;
         Block nextBlock;
