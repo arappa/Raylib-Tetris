@@ -15,7 +15,9 @@ class Game{
         Grid grid;
 
     private:
+        //Make private if only the game class will call it
         bool IsBlockOutside();
+        void RotateBlock();
         std::vector<Block> blocks;
         Block currentBlock;
         Block nextBlock;
