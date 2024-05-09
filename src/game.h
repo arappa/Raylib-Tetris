@@ -13,6 +13,7 @@ class Game{
         void MoveBlockRight();
         void MoveBlockDown();
         Grid grid;
+        bool gameOver;
 
     private:
         //Make private if only the game class will call it
@@ -20,6 +21,7 @@ class Game{
         void RotateBlock();
         void LockBlock();
         bool BlockFits();
+        void Reset();
         std::vector<Block> blocks;
         Block currentBlock;
         Block nextBlock;
