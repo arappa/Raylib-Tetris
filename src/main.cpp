@@ -1,5 +1,6 @@
 #include <raylib.h>
 #include "game.h"
+#include "colors.h"
 
 double lastUpdateTime = 0;
 
@@ -14,14 +15,13 @@ bool EventTriggered(double interval){
 
 int main()
 {
-    // Creates dark blue color object to use for background
-    Color darkBlue = {44, 44, 127, 255};
-
-    // Creates a game window of size 300px width, 600px height, and name of Tetris
-    InitWindow(300, 600, "Tetris");
+    // Creates a game window of size 500px width, 620px height, and name of Tetris
+    InitWindow(500, 620, "Tetris");
 
     // Makes gamespeed 60FPS on any system it runs on
     SetTargetFPS(60);
+
+    Font font = LoadFontEx("Font/BebasNeue-Regular.ttf", 64, 0, 0);
 
     Game game = Game();
     
@@ -32,9 +32,16 @@ int main()
         if(EventTriggered(0.2)){
             game.MoveBlockDown();
         }
-        
+
         BeginDrawing();
         ClearBackground(darkBlue);
+        DrawTextEx(font, "Score", {365, 15}, 38, 2, WHITE);
+        DrawTextEx(font, "Next", {370, 175}, 38, 2, WHITE);
+        if(game.gameOver){
+            DrawTextEx(font, "GAME OVER", {340, 450}, 38, 2, WHITE);
+        }
+        DrawRectangleRounded({320, 55, 170, 60}, 0.3, 6, lightBlue);
+        DrawRectangleRounded({320, 215, 170, 180}, 0.3, 6, lightBlue);
         game.Draw();
         EndDrawing();
         
