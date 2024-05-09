@@ -1,6 +1,5 @@
 #include <raylib.h>
-#include "grid.h"
-#include "blocks.cpp"
+#include "game.h"
 
 int main()
 {
@@ -13,19 +12,15 @@ int main()
     // Makes gamespeed 60FPS on any system it runs on
     SetTargetFPS(60);
 
-    // Creates a Grid object named grid and uses print function to print 2D array in terminal
-    Grid grid = Grid();
-    grid.Print();
+    Game game = Game();
     
-    OBlock block = OBlock();
-
     // GAME LOOP
     while (WindowShouldClose() == false)
     {
+        game.HandleInput();
         BeginDrawing();
         ClearBackground(darkBlue);
-        grid.Draw();
-        block.Draw();
+        game.Draw();
         EndDrawing();
         
     }
