@@ -1,7 +1,8 @@
 #pragma once
 
 class Position{
-    Position(int row, int column);
-    int row;
-    int column;
+    public:
+        Position(int row, int column);
+        int row;
+        int column;
 };
