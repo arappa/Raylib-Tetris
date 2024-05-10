@@ -30,6 +30,7 @@ int main()
     // GAME LOOP
     while (WindowShouldClose() == false)
     {
+        UpdateMusicStream(game.music);
         game.HandleInput();
         if(EventTriggered(0.2)){
             game.MoveBlockDown();
