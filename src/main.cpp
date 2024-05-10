@@ -22,6 +22,7 @@ int main()
     // Makes gamespeed 60FPS on any system it runs on
     SetTargetFPS(60);
 
+    //TODO: change font
     Font font = LoadFontEx("Font/BebasNeue-Regular.ttf", 64, 0, 0);
 
     Game game = Game();
@@ -30,7 +31,7 @@ int main()
     while (WindowShouldClose() == false)
     {
         game.HandleInput();
-        if(EventTriggered(1.2)){
+        if(EventTriggered(0.2)){
             game.MoveBlockDown();
         }
 
