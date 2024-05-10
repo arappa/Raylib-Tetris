@@ -14,6 +14,7 @@ class Game{
         void MoveBlockDown();
         Grid grid;
         bool gameOver;
+        int score;
 
     private:
         //Make private if only the game class will call it
@@ -22,6 +23,7 @@ class Game{
         void LockBlock();
         bool BlockFits();
         void Reset();
+        void UpdateScore(int linesCleared, int moveDownPoints);
         std::vector<Block> blocks;
         Block currentBlock;
         Block nextBlock;
