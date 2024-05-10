@@ -23,7 +23,7 @@ int main()
     SetTargetFPS(60);
 
     //TODO: change font
-    Font font = LoadFontEx("Font/BebasNeue-Regular.ttf", 64, 0, 0);
+    Font font = LoadFontEx("Font/monogram.ttf", 64, 0, 0);
 
     Game game = Game();
     
